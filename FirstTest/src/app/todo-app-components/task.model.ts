@@ -1,5 +1,10 @@
 export interface Task {
     id: number;
-    description: string;
+    title: string;
+    description: DescriptionItem[];
+    completed: boolean;
+}
+export interface DescriptionItem {
+    text: string;
     completed: boolean;
   }

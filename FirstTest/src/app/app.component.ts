@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Task } from './todo-app-components/task.model';
+import { DescriptionItem, Task } from './todo-app-components/task.model';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +9,28 @@ import { Task } from './todo-app-components/task.model';
 export class AppComponent {
   title = 'FirstTest';
   tasks: Task[] = [
-    { id: 1, description: 'Learn Angular', completed: false },
-    { id: 2, description: 'Build a to-do list', completed: true }
+    {
+      id: 1,
+      title: 'Learn Angular',
+      description: [
+        { text: 'learn Angular basics', completed: false },
+        { text: 'learn Angular Advanced', completed: false },
+        { text: 'learn LIA', completed: false }
+      ],
+      completed: false
+    }
   ];
 
-  onTaskAdded(description: string): void {
-    this.tasks.push({ id: this.tasks.length + 1, description, completed: false });
+  onTaskAdded(task: { title: string, description: string[] }): void {
+    const newTask: Task = {
+      id: this.tasks.length + 1,
+      title: task.title,
+      description: task.description.map(descriptionText => ({
+        text: descriptionText,
+        completed: false
+      })),
+      completed: false
+    };
+    this.tasks.push(newTask);
   }
 }

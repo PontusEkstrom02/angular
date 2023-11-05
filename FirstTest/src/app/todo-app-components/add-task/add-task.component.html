@@ -1,4 +1,6 @@
 <div>
-    <input type="text" [(ngModel)]="newTaskDescription" placeholder="Enter a new task" />
-    <button (click)="addTask()">Add</button>
+    <input type="text" [(ngModel)]="newTaskTitle" placeholder="Enter a new title" />
+    <input type="text" [(ngModel)]="newTaskDescriptionItem" placeholder="Enter a new item" />
+<button (click)="addItem(newTaskDescriptionItem)">Add Item</button>
+    <button (click)="addTask()">Add Task</button>
 </div>

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Task } from '../task.model';
+import { Task, DescriptionItem } from '../task.model';
 
 @Component({
   selector: 'app-todo-list',
@@ -9,7 +9,21 @@ import { Task } from '../task.model';
 export class TodoListComponent {
   @Input() tasks: Task[] = [];
 
-  toggleTask(task: Task): void {
-    task.completed = !task.completed;
+  deleteTask(task: Task): void {
+    const index = this.tasks.indexOf(task);
+    if (index !== -1) {
+      this.tasks.splice(index, 1);
+    }
+  }
+
+  deleteItem(item: DescriptionItem, task: Task): void {
+    const index = task.description.indexOf(item);
+    if (index !== -1) {
+      task.description.splice(index, 1);
+    }
+  }
+
+  toggleItem(item: DescriptionItem): void {
+    item.completed = !item.completed;
   }
 }
