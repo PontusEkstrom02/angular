@@ -26,4 +26,8 @@ export class TodoListComponent {
   toggleItem(item: DescriptionItem): void {
     item.completed = !item.completed;
   }
+  
+  onDescriptionAdded(descriptionItem: DescriptionItem, task: Task): void {
+    task.description.push(descriptionItem);
+  }
 }

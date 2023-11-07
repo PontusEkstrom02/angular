@@ -9,6 +9,7 @@
           <button (click)="deleteItem(item, task)">Delete</button>
         </li>
       </ul>
+      <app-add-text (descriptionAdded)="onDescriptionAdded($event, task)"></app-add-text>
     </li>
   </ul>
   
