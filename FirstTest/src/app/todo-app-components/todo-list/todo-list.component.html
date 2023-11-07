@@ -1,15 +1,16 @@
 <ul>
     <li *ngFor="let task of tasks">
       <h3>{{ task.title }}</h3>
-      <button (click)="deleteTask(task)">Delete</button>
+      <button *ngIf="editmode" (click)="deleteTask(task)">Delete</button>
       <ul>
         <li *ngFor="let item of task.description">
           <input type="checkbox" [(ngModel)]="item.completed" (click)="toggleItem(item)" />
           <span [ngClass]="{ 'completed': item.completed }">{{ item.text }}</span>
-          <button (click)="deleteItem(item, task)">Delete</button>
+          <button *ngIf="editmode" (click)="deleteItem(item, task)">Delete</button>
         </li>
       </ul>
       <app-add-text (descriptionAdded)="onDescriptionAdded($event, task)"></app-add-text>
+      <button (click)="onEdit()">{{ editmode ? 'Done' : 'Edit'}}</button>
     </li>
-  </ul>
+</ul>
   

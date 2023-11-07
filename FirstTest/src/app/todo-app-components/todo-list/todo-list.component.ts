@@ -8,6 +8,7 @@ import { Task, DescriptionItem } from '../task.model';
 })
 export class TodoListComponent {
   @Input() tasks: Task[] = [];
+  editmode: boolean = false;
 
   deleteTask(task: Task): void {
     const index = this.tasks.indexOf(task);
@@ -26,8 +27,11 @@ export class TodoListComponent {
   toggleItem(item: DescriptionItem): void {
     item.completed = !item.completed;
   }
-  
+
   onDescriptionAdded(descriptionItem: DescriptionItem, task: Task): void {
     task.description.push(descriptionItem);
+  }
+  onEdit(): void{
+    this.editmode = !this.editmode;
   }
 }
