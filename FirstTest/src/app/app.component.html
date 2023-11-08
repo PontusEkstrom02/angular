@@ -1,5 +1,5 @@
-<div>
-  <h1>Todo List</h1>
+<div class="todolist-container">
+  <h1 class="todolist-title">Todo List</h1>
   <app-add-task (taskAdded)="onTaskAdded($event)"></app-add-task>
   <app-todo-list [tasks]="tasks"></app-todo-list>
 </div>

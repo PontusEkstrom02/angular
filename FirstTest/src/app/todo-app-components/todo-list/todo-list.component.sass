@@ -1,4 +1,41 @@
+@import '../../variables'
 $completed-text-decoration: line-through
 
 .completed
   text-decoration: $completed-text-decoration
+
+.list-task-container
+  list-style-type: none
+  padding-inline-start: 0em
+  width: 20em
+  margin: 0 auto
+
+.list-item-container
+  list-style-type: none
+  padding-inline-start: 0em
+  margin-left: 1em
+
+.task-container
+  border: 1px dashed $accent-color
+  margin-top: 1em
+  padding: .5em
+  border-radius: 1em
+
+.task-title, .item-text
+  color: $text-color
+  margin: 0
+
+.item-container
+  margin-top: 5px
+
+.edit-btn
+  background-color: $background-color
+  color: $text-color
+  border-radius: 5px
+  border: 2px solid $primary-color
+
+.delete-btn
+  background-color: $background-color
+  color: $text-color
+  border-radius: 5px
+  border: 2px solid $primary-color
