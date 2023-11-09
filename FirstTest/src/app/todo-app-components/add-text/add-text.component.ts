@@ -10,12 +10,15 @@ export class AddTextComponent {
   @Output() descriptionAdded = new EventEmitter<DescriptionItem>();
 
   newTaskDescriptionItem: string = '';
+  newNote: string = ''
 
   addItem(descriptionText: string): void {
     if (descriptionText.trim() !== '') {
       const newDescriptionItem: DescriptionItem = {
         text: descriptionText,
-        completed: false
+        completed: false,
+        note: this.newNote,
+        showNote: false
       };
 
       this.descriptionAdded.emit(newDescriptionItem);

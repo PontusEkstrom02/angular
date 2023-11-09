@@ -1,8 +1,13 @@
 @import '../../variables'
-$completed-text-decoration: line-through
 
 .completed
-  text-decoration: $completed-text-decoration
+  text-decoration: line-through
+
+.hideNote
+  display: none
+
+.showNote
+  display: flex
 
 .list-task-container
   list-style-type: none
@@ -24,6 +29,10 @@ $completed-text-decoration: line-through
 .task-title, .item-text
   color: $text-color
   margin: 0
+  padding-left: 1em
+
+.item-text:hover
+  cursor: pointer
 
 .item-container
   margin-top: 5px
@@ -39,3 +48,15 @@ $completed-text-decoration: line-through
   color: $text-color
   border-radius: 5px
   border: 2px solid $primary-color
+
+.high
+  background-color: $high-color
+  border-radius: 1em
+
+.medium
+  background-color: $medium-color
+  border-radius: 1em
+
+.low
+  background-color: $low-color
+  border-radius: 1em

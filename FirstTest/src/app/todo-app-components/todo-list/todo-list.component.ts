@@ -31,7 +31,12 @@ export class TodoListComponent {
   onDescriptionAdded(descriptionItem: DescriptionItem, task: Task): void {
     task.description.push(descriptionItem);
   }
+  
   onEdit(): void{
     this.editmode = !this.editmode;
+  }
+
+  showNote(item: DescriptionItem): void{
+    item.showNote = !item.showNote;
   }
 }

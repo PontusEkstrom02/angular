@@ -1,4 +1,7 @@
 <div class="add-task-container">
     <input type="text" [(ngModel)]="newTaskTitle" placeholder="Enter a new title" class="task-input"/>
+    <select [(ngModel)]="selectedPriority">
+        <option *ngFor="let option of priorityOptions" [value]="option">{{ option }}</option>
+    </select>
     <button (click)="addTask()" class="add-btn">Add Task</button>
 </div>
