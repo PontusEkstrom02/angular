@@ -7,7 +7,11 @@
           <input type="checkbox" [(ngModel)]="item.completed" (click)="toggleItem(item)" class="checkbox" />
           <span [ngClass]="{ 'completed': item.completed }" class="item-text" (click)="showNote(item)">{{ item.text }}</span>
           <button *ngIf="editmode" (click)="deleteItem(item, task)" class="delete-btn">Delete</button>
-          <a [ngClass]="{ 'showNote': item.showNote, 'hideNote': !item.showNote }">{{item.note}}</a>
+          <span
+          [ngClass]="{ 'showNote': item.showNote, 'hideNote': !item.showNote }"
+          contenteditable="true"
+          [(ngModel)]="item.note"
+          >{{item.note}}</span>
         </li>
       </ul>
       <app-add-text (descriptionAdded)="onDescriptionAdded($event, task)"></app-add-text>

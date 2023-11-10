@@ -39,4 +39,5 @@ export class TodoListComponent {
   showNote(item: DescriptionItem): void{
     item.showNote = !item.showNote;
   }
+  
 }
