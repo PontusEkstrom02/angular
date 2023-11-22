@@ -9,13 +9,14 @@ import { TodoListComponent } from './todo-app-components/todo-list/todo-list.com
 import { AddTaskComponent } from './todo-app-components/add-task/add-task.component';
 import { AddTextComponent } from './todo-app-components/add-text/add-text.component';
 import { TodoListSiteComponent } from './todo-app-components/todo-list-site/todo-list-site.component';
-import { WheatherSiteComponent } from './wheater-app-components/wheather-site/wheather-site.component';
-import { WeatherDisplayComponent } from './wheater-app-components/wheater-site-components/weather-display/weather-display.component';
-import { WheaterSearchBarComponent } from './wheater-app-components/wheater-site-components/wheater-search-bar/wheater-search-bar.component';
+import { HeaderNavComponent } from './header-nav/header-nav.component';
+import { WeatherAppSiteComponent } from './weather-app-components/weather-app-site/weather-app-site.component';
+import { WeatherDisplayComponent } from './weather-app-components/weather-components/weather-display/weather-display.component';
+import { WeatherSearchBarComponent } from './weather-app-components/weather-components/weather-search-bar/weather-search-bar.component';
 
 const routes: Routes = [
   { path: 'todo-list', component: TodoListSiteComponent },
-  { path: 'Weather-app', component: WheatherSiteComponent },
+  { path: 'Weather-app', component: WeatherAppSiteComponent },
   // Add more routes for other pages as needed
   { path: '', redirectTo: '/', pathMatch: 'full' }, // Default route
 ];
@@ -27,9 +28,10 @@ const routes: Routes = [
     AddTaskComponent,
     AddTextComponent,
     TodoListSiteComponent,
-    WheatherSiteComponent,
+    HeaderNavComponent,
+    WeatherAppSiteComponent,
     WeatherDisplayComponent,
-    WheaterSearchBarComponent
+    WeatherSearchBarComponent
   ],
   imports: [
     BrowserModule,
